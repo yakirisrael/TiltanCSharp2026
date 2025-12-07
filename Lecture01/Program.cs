@@ -12,16 +12,15 @@
 
 
 // this lines read the first score
-Console.WriteLine("Enter first score");
-string firstScore = Console.ReadLine();
 
-float firstScoreFloat = float.Parse(firstScore);
+using System.Diagnostics;
 
-// this lines read the second score
-Console.WriteLine("Enter second score");
-string secondScore = Console.ReadLine();
-float secondScoreFloat = float.Parse(secondScore);
+float sum = 0;
+int a = 10;
+float b = (float)20.3;
+sum = (float)a + b;
 
-float avg = (firstScoreFloat + secondScoreFloat) / 2.0f;
-Console.WriteLine("The average is: " + avg);
+string message = "hello world";
+float c = float.Parse(message);
+Debug.WriteLine("Sum: " + sum);
 

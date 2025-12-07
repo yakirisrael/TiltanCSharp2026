@@ -12,3 +12,4 @@ C:\Users\yakir\RiderProjects\TiltanCSharp2026\Lecture01\obj\Debug\net9.0\refint\
 C:\Users\yakir\RiderProjects\TiltanCSharp2026\Lecture01\obj\Debug\net9.0\Lecture01.pdb
 C:\Users\yakir\RiderProjects\TiltanCSharp2026\Lecture01\obj\Debug\net9.0\Lecture01.genruntimeconfig.cache
 C:\Users\yakir\RiderProjects\TiltanCSharp2026\Lecture01\obj\Debug\net9.0\ref\Lecture01.dll
+C:\Users\yakir\RiderProjects\TiltanCSharp2026\Lecture01\obj\Debug\net9.0\Lecture01.sourcelink.json
