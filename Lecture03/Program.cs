@@ -17,3 +17,23 @@ do
     z--;
 }
 while (z <= 20 && z >= 0) ;
+
+/*
+int maxIterations = 1000000;
+int i = 0;
+int stopCondition = 500;
+while (i < maxIterations)
+{
+    Console.WriteLine(i);
+    
+    if ( i == stopCondition) break;
+
+    i++;
+} */
+
+for (int i = 0; i <= 10; i++)
+{
+        Console.WriteLine(i * i);
+}
+
+
