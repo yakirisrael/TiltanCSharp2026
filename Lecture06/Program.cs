@@ -1,8 +1,35 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-double[] resources = { 10.5, 22, 30.3 };
+string playerName = Console.ReadLine();
 
-foreach (double resource in resources)
+int indexInValid;
+Validate(playerName, 20, out indexInValid);
+bool Validate(string str, int sizeToCheck, out int indexInValid)
 {
-    resource = resource + 1;
+    indexInValid = -1;
+    
+    if (str.Length > sizeToCheck)
+    {
+        return false;
+    }
+
+    for (int i = 0; i < str.Length; i++)
+    {
+        if (!IsASCII(str[i]))
+        {
+            indexInValid = i;
+            return false;
+        }
+    }
+
+    return true;
+}
+
+bool IsASCII(char c)
+{
+    if ((c >= 'A' && c <= 'Z') || // is upper case
+        (c >= 'a' && c <= 'z')) // is lower case
+        return true;
+    
+    return false;
 }
