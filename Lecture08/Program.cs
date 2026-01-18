@@ -1,14 +1,21 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-
+Console.WriteLine(Player.GetPlayerId());
 Player p1 = new Player();
 p1.PrintInfo();
+
+
+Console.WriteLine(Player.GetPlayerId());
+
 
 Console.WriteLine("--------------------");
 Player p2 = new Player("Yossi", 0, WeaponType.Bow);
 p2.SetName("Yan");
 
 p2.PrintInfo();
+
+Console.WriteLine(Player.GetPlayerId());
+
 public enum WeaponType
 {
     Axe,
@@ -46,12 +53,28 @@ public class Player
     private int experience;
     private Weapon weapon;
 
+    private static int id = 100;
+
+    public static int GetPlayerId()
+    {
+        return id;
+    }
+
     public Player()
     {
         this.name = "Player";
         this.hp = 100;
         this.experience = 0;
         this.weapon = new Weapon();
+
+        float height = 10;
+        float weight = 20;
+
+        double heightPow = Math.Pow((double)height, 2);
+        float bmi = weight / (float)heightPow;
+        float speed = 30 - bmi;
+
+        id++;
     }
     public  Player(string name, int weaponDamage, WeaponType type)
     {
@@ -60,6 +83,8 @@ public class Player
         this.experience = 0;
 
         weapon = new Weapon(weaponDamage, type);
+
+        id++;
     }
 
     public void PrintInfo()
