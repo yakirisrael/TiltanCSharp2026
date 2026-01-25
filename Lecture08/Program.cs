@@ -1,12 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine(Player.GetPlayerId());
-Player p1 = new Player();
-p1.PrintInfo();
-
-
-Console.WriteLine(Player.GetPlayerId());
-
 
 Console.WriteLine("--------------------");
 Player p2 = new Player("Yossi", 0, WeaponType.Bow);
@@ -14,7 +7,15 @@ p2.SetName("Yan");
 
 p2.PrintInfo();
 
-Console.WriteLine(Player.GetPlayerId());
+Console.WriteLine("--------------------");
+Player p3 = new Player(p2);
+p3.SetName("Maayan");
+p3.PrintInfo();
+
+Console.WriteLine("--------------------");
+p2.PrintInfo();
+
+Console.WriteLine(p2.AreEqual(p3));
 
 public enum WeaponType
 {
@@ -23,10 +24,10 @@ public enum WeaponType
     Crossbow,
 }
 
-class Weapon
+public class Weapon
 {
     int damage;
-    WeaponType type;
+    public WeaponType type;
 
     public Weapon()
     {
@@ -44,6 +45,7 @@ class Weapon
         Console.WriteLine($"damage: {this.damage}");
         Console.WriteLine($"type: {this.type}");
     }
+    
 }
 
 public class Player
@@ -51,7 +53,7 @@ public class Player
     private string name;
     private int hp;
     private int experience;
-    private Weapon weapon;
+    public Weapon weapon;
 
     private static int id = 100;
 
@@ -76,6 +78,15 @@ public class Player
 
         id++;
     }
+
+    public Player(Player other)
+    {
+        this.name = other.name;
+        this.hp = other.hp;
+        this.experience = other.experience;
+        this.weapon = other.weapon;
+    }
+
     public  Player(string name, int weaponDamage, WeaponType type)
     {
         this.name = name;
@@ -103,8 +114,12 @@ public class Player
 
     public void SetName(string name)
     {
-        if (name == "Yan") return;
         this.name = name;
+    }
+    
+    public bool AreEqual(Player other)
+    {
+        return (this.weapon.type == other.weapon.type);
     }
 }
 
